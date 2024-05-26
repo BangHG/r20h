@@ -1,0 +1,15 @@
+﻿<script>
+  (function () {
+    function isMobile() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      return /android|avantgo|blackberry|bada\/|bb10|meego|palm|phone|ipod|iphone|iemobile|mini|mmp|netfront|opera m(ob|in)i|phone|symbian|ucweb|up\.browser|up\.link|windows ce|windows phone|xda|xiino/i.test(userAgent);
+    }
+
+    if (isMobile()) {
+      window.location.href = 'mobile/index.html';
+    } else {
+      window.location.href = 'web/index.html';
+    }
+  })();
+</script>
