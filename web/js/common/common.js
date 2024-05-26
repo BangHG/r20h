@@ -1,5 +1,4 @@
 ﻿$(window).on('load', function () {
-  //## 전환효과
   $('body').attr('data-loading', 'done');
   $('.loading-splash').fadeOut(500);
 });
