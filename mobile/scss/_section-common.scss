@@ -1,0 +1,68 @@
+﻿.section {
+  // background-color: #fff; //fixme
+  //   position: relative;
+  //   overflow-x: hidden;
+  //   &:after {
+  //     clear: both;
+  //     display: block;
+  //     content: '';
+  //   }
+  // overflow: hidden;
+  // sticky 때문에 못넣는다...
+  position: relative;
+}
+
+// @for $i from 1 through 10 {
+//   #section-#{$i} {
+//     z-index: $i + 10;
+//   }
+// }
+// .footer {
+//   z-index: 21;
+// }
+
+.app-download {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  gap: vw(28);
+  .link {
+    width: vw(428);
+    height: vw(127);
+    display: block;
+  }
+}
+
+.btn-link {
+  display: block;
+  position: absolute;
+  margin: 0 auto;
+  width: vw(878);
+  height: vw(179);
+}
+
+.swiper-button {
+  top: 50%;
+  margin-top: vw(-112/2);
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  transition: 300ms opacity;
+  background: url(../images/swiper-button.webp) no-repeat;
+  background-size: vw(150) auto;
+  z-index: 5;
+  &-disabled {
+    cursor: default;
+    opacity: 0 !important;
+  }
+  &--next {
+    @include spr(-10, -10, 130, 125);
+    right: 0;
+  }
+  &--prev {
+    @include spr(-10, -155, 130, 125);
+    left: 0;
+  }
+}

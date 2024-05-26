@@ -1,0 +1,18 @@
+﻿.section--world {
+  background: #000 url(../images/world/bg.webp) no-repeat 0 0;
+  background-size: cover;
+  height: vw(2000);
+
+  .content {
+    max-width: vw(880);
+    top: vw(406);
+    position: relative;
+    margin: 0 auto;
+    .popup-link--video {
+      *,
+      & {
+        width: 100%;
+      }
+    }
+  }
+}

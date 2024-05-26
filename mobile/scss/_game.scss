@@ -1,0 +1,57 @@
+﻿.section--game {
+  background: #000 url(../images/game/bg.webp) no-repeat 0 0;
+  background-size: cover;
+  height: vw(2000);
+
+  .swiper {
+    position: relative;
+    overflow: visible;
+    top: vw(469);
+    margin: 0 auto;
+    text-align: center;
+    width: vw(870); //swiper
+    // &-slide {
+    //   img {
+    //     width: 100%;
+    //   }
+    // }
+
+    .img-bx {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+      margin: 0 auto;
+      max-width: vw(1000);
+      aspect-ratio: 870/1172;
+      display: block;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      background: url(../images/game/frame.webp) no-repeat;
+      background-size: vw(982);
+      width: vw(982);
+      height: vw(1274);
+      position: absolute;
+      z-index: 2;
+      top: vw(-65);
+      left: vw(-56);
+      z-index: 2;
+    }
+    &-button {
+      top: auto;
+      margin-top: auto;
+      bottom: vw(-200);
+      $arr: vw(-160);
+      &--next {
+        right: 50%;
+        margin-right: $arr;
+      }
+      &--prev {
+        left: 50%;
+        margin-left: $arr;
+      }
+    }
+  }
+}

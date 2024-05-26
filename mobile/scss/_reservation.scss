@@ -1,0 +1,117 @@
+﻿.section--reservation {
+  background: #000 url(../images/reservation/bg.webp) no-repeat 0 0;
+  background-size: cover;
+  height: vw(10000);
+
+  .app-download {
+    top: vw(5080);
+  }
+
+  .form-area {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0 vw(60);
+    top: vw(2630);
+    display: block;
+    z-index: 5;
+    text-align: left;
+    font-size: vw(32);
+    color: #bababa;
+    * {
+      font-weight: 500;
+      letter-spacing: -0.05em;
+    }
+    .input {
+      height: vw(121);
+      padding: 0 1.2em;
+      font-size: vw(36);
+      width: 100%;
+      background-color: #fff;
+      border: 0;
+    }
+    hr {
+      height: vw(94);
+      border: 0;
+      display: block;
+      padding: 0;
+    }
+    .chk-wrap {
+      margin-top: vw(60);
+      padding: 0 vw(60);
+      label {
+        cursor: pointer;
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+      }
+      input {
+        margin-right: 0.3em;
+        width: vw(34) - vw(2);
+        height: vw(34) - vw(2);
+        box-shadow: 0 0 0 vw(2) #a29d96;
+        margin-left: vw(2);
+        accent-color: $color-1;
+        background-color: #fff;
+        &:checked {
+          background-color: $color-1;
+          box-shadow: 0 0 0 vw(2) $color-1;
+        }
+      }
+      .chk-all {
+        font-size: vw(34);
+      }
+      &__list {
+        padding-left: vw(28);
+        li {
+          margin-top: vw(15);
+        }
+      }
+    }
+    .clause-btn {
+      display: inline-block;
+      margin-left: 0.7em;
+      padding-left: 0.7em;
+      padding-right: 1.4em;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='8' fill='black'/%3E%3Cpath d='M6 12L10 8L6 4' stroke='%23FFF6E7' stroke-width='2'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: 100% 50%;
+      background-size: 1em;
+      // font-family: $font-family-sub;
+      color: #999;
+      font-weight: 600;
+      font-size: vw(32);
+      position: relative;
+      &:hover {
+        color: lighten(#999, 5%);
+      }
+      &:before {
+        content: '';
+        width: vw(2);
+        background-color: #545260;
+        height: 0.9em;
+        margin-top: -0.45em;
+        top: 50%;
+        left: 0;
+        display: block;
+        position: absolute;
+      }
+    }
+    .alert {
+      padding-left: vw(22) - vw(4) + vw(8);
+      margin-top: 0.9em;
+      word-break: keep-all;
+      width: 100%;
+      font-size: vw(30);
+      color: #d1af86;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+    // .btn-reservation {
+    .btn-link {
+      top: vw(575);
+      left: 0;
+      right: 0;
+    }
+  }
+}

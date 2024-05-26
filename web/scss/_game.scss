@@ -1,0 +1,78 @@
+﻿.section--game {
+  text-align: center;
+  background: #000 url(../images/game/bg.webp) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  .ch-bx {
+    &:before {
+      content: '';
+      background: url(../images/game/bg-cft.webp) no-repeat;
+      width: 1488px;
+      height: 1310px;
+      position: absolute;
+      left: 50%;
+      margin-left: -950px;
+      top: 0;
+      display: block;
+      $duration: 5000ms;
+      transform-origin: 40% 40%;
+      animation: cftSwaygame $duration infinite both alternate;
+    }
+  }
+  .container {
+    position: relative;
+  }
+  .content {
+    position: relative;
+  }
+
+  .swiper {
+    margin: 22px auto 210px;
+    position: relative;
+    overflow: visible;
+    .img-bx {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 50% 50%;
+      margin: 0 auto;
+      max-width: 1000px;
+      aspect-ratio: 1000/562;
+      display: block;
+    }
+    &:before {
+      content: '';
+      display: block;
+      background: url(../images/game/frame.webp?versdf) no-repeat;
+      width: 1070px;
+      height: 632px;
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      margin-left: -535px;
+      top: -48px;
+      z-index: 2;
+    }
+  }
+
+  @keyframes cftSwaygame {
+    0% {
+      transform: skew(0);
+      opacity: 1;
+    }
+    100% {
+      transform: skew(-3deg);
+      opacity: 1;
+    }
+    35%,
+    65% {
+      opacity: 1;
+    }
+    20%,
+    50%,
+    80% {
+      opacity: 0.8;
+    }
+  }
+}

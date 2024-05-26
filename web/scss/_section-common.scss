@@ -1,0 +1,151 @@
+﻿.section {
+  // background-color: #fff; //fixme
+  //   position: relative;
+  //   overflow-x: hidden;
+  //   &:after {
+  //     clear: both;
+  //     display: block;
+  //     content: '';
+  //   }
+  // overflow: hidden;
+  // sticky 때문에 못넣는다...
+  position: relative;
+}
+
+@for $i from 1 through 10 {
+  #section-#{$i} {
+    z-index: $i + 10;
+  }
+}
+.footer {
+  z-index: 21;
+}
+
+.section {
+  &.fix {
+    .ch-bx {
+      position: fixed;
+    }
+    &.bottom .ch-bx {
+      position: absolute;
+    }
+  }
+
+  $chMedia: true;
+  @mixin chMedia {
+    @if $chMedia == true {
+      @media screen and (min-width: 2000px) {
+        @content;
+      }
+    }
+    @media screen and (max-width: 1900px) {
+      @content;
+    }
+  }
+  .ch {
+    position: absolute;
+    &-bx {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+  &--reservation .ch {
+    top: 166px;
+    right: -26px;
+
+    @include chMedia {
+      right: 50%;
+      margin-right: -960px - 26px;
+    }
+  }
+  &--cbt .ch {
+    top: 162px;
+    right: -50px;
+
+    @include chMedia {
+      right: 50%;
+      margin-right: -960px - 50px;
+    }
+  }
+  &--game .ch {
+    top: 114px;
+    right: -50px;
+    @include chMedia {
+      right: 50%;
+      margin-right: -960px;
+    }
+  }
+  &--cross-event {
+    $chMedia: true;
+    .ch--r {
+      top: 261px;
+      right: 0;
+      @include chMedia {
+        right: 50%;
+        margin-right: -960px;
+      }
+    }
+    .ch--l {
+      top: 261px;
+      left: 133px;
+      @include chMedia {
+        left: 50%;
+        margin-left: -840px;
+      }
+    }
+  }
+}
+
+.app-download {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  gap: 15px;
+  .link {
+    width: 236px;
+    height: 70px;
+    display: block;
+  }
+}
+
+.btn-link {
+  display: block;
+  transition: 300ms all;
+  &:hover {
+    filter: brightness(120%);
+  }
+}
+
+.swiper-button {
+  top: 50%;
+  margin-top: (-112px/2);
+  display: block;
+  position: absolute;
+  cursor: pointer;
+  transition: 300ms opacity;
+  background: url(../images/swiper-button.webp) no-repeat;
+  z-index: 5;
+  &-disabled {
+    cursor: default;
+    opacity: 0 !important;
+  }
+  $job-arr: -510px;
+  &--next {
+    @include spr(-10px, -10px, 117px, 113px);
+    right: 0;
+    &:hover {
+      @include spr(-10px, -143px, 117px, 112px);
+    }
+  }
+  &--prev {
+    @include spr(-10px, -275px, 117px, 113px);
+    left: 0;
+    &:hover {
+      @include spr(-10px, -408px, 117px, 113px);
+    }
+  }
+}

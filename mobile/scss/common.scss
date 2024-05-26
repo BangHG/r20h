@@ -1,0 +1,44 @@
+@charset 'UTF-8';
+@use 'sass:math';
+@import '_variables';
+
+// @import 'util/_hamburger';
+@import 'layout/basic';
+@import 'layout/layout';
+
+@import 'layout/header';
+@import 'layout/footer';
+
+// util
+@import 'popup'; //팝업
+// @import 'monster';
+
+// 컨텐츠
+@import 'main';
+
+@import 'section-common';
+
+@import 'reservation';
+@import 'cbt';
+@import 'cross-event';
+@import '_game';
+@import 'heroes';
+@import 'world';
+
+//버튼 위치 테스트용 코드
+.app-download .link,
+.btn-link,
+.section--main__content .btn-list .btn {
+  // background-color: rgba(yellow, 0.3); //TODO: //test
+}
+
+.cbtClosed {
+  position: absolute;
+  z-index: 10;
+  display: block;
+  left: vw(246);
+  top: vw(1250);
+  img {
+    width: vw(508);
+  }
+}

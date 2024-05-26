@@ -1,0 +1,16 @@
+﻿.section--cbt {
+  background: #000 url(../images/cbt/bg.webp) no-repeat 0 0;
+  background-size: cover;
+  height: vw(2300);
+
+  .content {
+    position: relative;
+    top: vw(800);
+    // .app-download {
+    // }
+    .btn-link {
+      top: vw(188);
+      position: relative;
+    }
+  }
+}

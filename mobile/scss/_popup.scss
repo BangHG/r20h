@@ -1,0 +1,147 @@
+$closeBtn_w: 140;
+//  블라인드
+.blind {
+  backdrop-filter: blur(4px);
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 300;
+  text-align: left;
+  &--btnClosed {
+    display: none;
+    z-index: 500;
+    width: vw($closeBtn_w);
+    height: vw($closeBtn_w);
+    cursor: pointer;
+    background: url(../images/btn-close.webp) no-repeat 50%;
+    background-size: vw(84);
+    // 우상단 노출
+    right: 0;
+    top: 0;
+    position: fixed;
+    //각각노출
+    /*display: block;
+    position: absolute;
+    top: 0;
+    margin-left: vw(-$closeBtn_w/2);
+    left: 50%; */
+
+    // opacity: 0.8;
+    // &:before {
+    //   display: block;
+    //   content: '';
+    //   width: 100%;
+    //   height: 100%;
+    //   top: 0;
+    //   left: 0;
+    //   transition: transform 500ms;
+
+    // }
+    // &:focus,
+    // &:hover {
+    // opacity: 1;
+    // &:before {
+    //   transform: rotateY(180deg);
+    // }
+    // }
+  }
+}
+
+// 팝업
+//TODO: 패딩자리 다시잡기(컨텐츠 relative
+.popup {
+  position: fixed;
+  display: none;
+  z-index: 400;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: vw($closeBtn_w) 0;
+  width: 100%;
+  // max-height: 100vh;
+  // height: 100vh;
+  // top: 0;
+  // right: 0;
+  // bottom: 0;
+  // left: 0;
+  align-items: center;
+  justify-content: center;
+  * {
+    letter-spacing: -0.05em;
+    word-break: keep-all;
+  }
+  //scroll
+  overflow-y: auto;
+  max-height: 100vh;
+  /*
+  &::-webkit-scrollbar { 
+    width: vw(6);
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: vw(3);
+    background-color: rgba(#fff, 0.3);
+  }
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  } */
+  //scroll
+  &__wrap {
+    width: 100%;
+    max-width: vw(930);
+    position: relative;
+    margin: 0 auto;
+  }
+
+  //비디오 팝업: 별도 스크립트
+  &--video {
+    display: flex !important;
+    opacity: 0;
+    z-index: -2;
+    transition: 500ms opacity;
+    transition-delay: 100ms;
+    // max-width: vw(880);
+    &.open {
+      z-index: 400;
+      opacity: 1;
+    }
+    @at-root .you_tube {
+      background-color: #000;
+      position: relative;
+      width: 100%;
+      margin: 0 auto;
+      height: 0;
+      padding-bottom: 56.25%;
+      display: block;
+      iframe,
+      object,
+      embed {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+.popup__reservation {
+  .app-download {
+    bottom: 9.5vw;
+    max-width: 78vw;
+    margin: 0 auto;
+  }
+}

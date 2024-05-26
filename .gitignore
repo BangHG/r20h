@@ -1,0 +1,7 @@
+﻿*.lnk
+.vscode
+*.bak.*
+bak
+template
+node_modules
+*.mp4

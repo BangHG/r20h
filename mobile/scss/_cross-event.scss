@@ -1,0 +1,36 @@
+﻿.section--cross-event {
+  background: #000 url(../images/cross-event/bg.webp) no-repeat 0 0;
+  background-size: cover;
+  // background: #000 url(../images/cross-event/bak.wait/bg.webp) no-repeat 0 0;
+  height: vw(4000);
+
+  .content {
+    position: absolute;
+    width: 100%;
+    &--r20h {
+      top: vw(2000);
+    }
+    &--rov {
+      top: vw(2835);
+      .btn-link {
+        max-width: vw(760);
+      }
+    }
+  }
+
+  .btn-link {
+    // top: vw(188);
+    position: relative;
+    &--survey_r20h {
+      top: vw(170);
+    }
+    &--cbt {
+    }
+    &--survey_rov {
+      margin-top: vw(30);
+    }
+    &--event {
+      top: vw(3615);
+    }
+  }
+}

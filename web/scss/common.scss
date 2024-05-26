@@ -1,0 +1,32 @@
+@charset 'UTF-8';
+
+@import '_variables';
+
+@import 'util/_hamburger';
+@import 'layout/basic';
+@import 'layout/layout';
+
+@import 'layout/header';
+@import 'layout/footer';
+
+// util
+@import 'popup'; //팝업
+// @import 'monster';
+
+// 컨텐츠
+@import 'main';
+
+@import 'section-common';
+
+@import 'reservation';
+@import 'cbt';
+@import 'cross-event';
+@import '_game';
+@import 'heroes';
+@import 'world';
+
+//버튼 위치 테스트용 코드
+.app-download .link,
+.btn-link {
+  // background-color: rgba(yellow, 0.3); //TODO: //test
+}

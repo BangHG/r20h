@@ -1,0 +1,44 @@
+$color-1: #67a0ff;
+// $font-family-sub: 'GmarketSans', 'Noto Sans KR', sans-serif;
+$font-family-sub: 'Noto Sans KR', sans-serif;
+
+@function vw($val, $std: 1000) {
+  @return ($val / ($std / 100)) * 1vw;
+}
+
+@mixin btnImg($w, $h, $file, $position: relative) {
+  @if $position == relative {
+  } @else {
+    position: absolute;
+    left: 50%;
+    margin-left: ($w/-2);
+  }
+  width: $w;
+  height: ($h/2);
+  background-image: url($file);
+  background-position-y: 0;
+  background-repeat: no-repeat;
+  transition: none;
+  &:hover,
+  &:focus {
+    background-position-y: 100%;
+  }
+}
+
+// @mixin spr($x: 0, $y: 0, $width: 0, $height: 0) {
+//   background-position: $x $y;
+//   width: $width;
+//   height: $height;
+// }
+
+$sprVw: 0.1vw;
+@mixin spr($x: 0, $y: 0, $width: 0, $height: 0) {
+  background-position-x: $x * $sprVw;
+  background-position-y: $y * $sprVw;
+  width: $width * $sprVw;
+  height: $height * $sprVw;
+}
+
+.text-color-1 {
+  color: $color-1;
+}

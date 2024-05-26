@@ -1,0 +1,100 @@
+﻿.section--cbt {
+  text-align: center;
+  background: #000 url(../images/cbt/bg.webp) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  .container {
+    position: relative;
+  }
+  .content {
+    position: relative;
+  }
+  .ch-bx {
+    // z-index: 2;<!-- 230720 수정 --> 뒤로
+  }
+
+  @keyframes cftSwayCbt {
+    0% {
+      transform: skew(0);
+      opacity: 1;
+    }
+    100% {
+      transform: skew(-5deg) translate(5%, 5%);
+      opacity: 1;
+    }
+    35%,
+    65% {
+      opacity: 1;
+    }
+    20%,
+    50%,
+    80% {
+      opacity: 0.8;
+    }
+  }
+
+  .bg-cft {
+    &_bx {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+    }
+    background-image: url(../images/cbt/bg-cft.webp);
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    $duration: 5000ms;
+    animation: cftSwayCbt $duration infinite both;
+    animation-direction: alternate;
+    &:nth-child(2n) {
+      animation-delay: $duration/-2;
+    }
+    &--1 {
+      @include spr(-10px, -10px, 184px, 468px);
+      top: 173px;
+      left: 50%;
+      margin-left: -960px;
+    }
+
+    &--2 {
+      @include spr(-10px, -498px, 429px, 333px);
+      top: 8px;
+      left: 50%;
+      margin-left: -700px;
+    }
+
+    &--3 {
+      @include spr(-10px, -851px, 245px, 115px);
+      top: 5px;
+      left: 50%;
+      margin-left: -150px;
+    }
+
+    &--4 {
+      @include spr(-10px, -986px, 130px, 112px);
+      top: 14px;
+      right: 50%;
+      margin-right: -500px;
+    }
+
+    &--5 {
+      @include spr(-10px, -1118px, 219px, 339px);
+      top: 777px;
+      right: 50%;
+      margin-right: -500px;
+    }
+  }
+
+  .app-download {
+    top: 74px;
+  }
+  .btn-link {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 190px;
+  }
+}

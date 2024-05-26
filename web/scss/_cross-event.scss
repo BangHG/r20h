@@ -1,0 +1,83 @@
+﻿.section--cross-event {
+  text-align: center;
+  // background: #000 url(../images/cross-event/bg.webp) no-repeat;
+  // background-attachment: fixed;
+  // background-size: cover;
+  position: relative;
+  padding-bottom: 80px;
+  &:before {
+    background: #000 url(../images/cross-event/bg.webp) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    // z-index: -1;
+    display: block;
+    animation: bgFilter 4000ms infinite both alternate;
+    @keyframes bgFilter {
+      from {
+        filter: hue-rotate(0deg);
+      }
+      to {
+        filter: hue-rotate(50deg);
+      }
+    }
+  }
+  .container {
+    position: relative;
+  }
+  .content {
+    position: relative;
+  }
+
+  .app-download {
+    top: 187px;
+  }
+  .btn-link {
+    position: absolute;
+    position: absolute;
+    // opacity: 0.5;
+    // filter: invert(1);
+    &--survey_r20h {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 283px;
+    }
+    &--cbt,
+    &--survey_rov {
+      top: 215px;
+    }
+    &--cbt {
+      left: 50%;
+      margin-left: -409px;
+    }
+    &--survey_rov {
+      right: 50%;
+      margin-right: -401px;
+    }
+    &--event {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 146px;
+      // &:hover {
+      //   filter: hue-rotate(30deg) brightness(115%);
+      // }
+    }
+  }
+  // .ch-bx {
+  //   z-index: 2;
+  // }
+
+  // @keyframes cftSway {
+  //   0% {
+  //     transform: skew(0);
+  //   }
+  //   100% {
+  //     transform: skew(-5deg);
+  //   }
+  // }
+}

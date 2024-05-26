@@ -1,0 +1,210 @@
+﻿.section--heroes {
+  text-align: center;
+  background: #000 url(../images/heroes/bg.webp) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  padding-bottom: 250px;
+  .bg-cft {
+    &_bx {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      > span {
+        transition-duration: 2s;
+      }
+    }
+    background-image: url(../images/heroes/bg-cft.webp);
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    $duration: 8000ms;
+    animation: cftSwayHeroes $duration infinite both;
+    animation-direction: alternate;
+
+    @keyframes cftSwayHeroes {
+      0% {
+        transform: skew(0);
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(-5deg) translate(15%, 15%);
+        opacity: 1;
+      }
+    }
+
+    &--1 {
+      @include spr(-10px, -10px, 267px, 140px);
+      left: 50%;
+      margin-left: -604px - 267px;
+      top: 703px;
+    }
+
+    &--2 {
+      @include spr(-10px, -170px, 48px, 38px);
+      left: 50%;
+      margin-left: -464px - 48px;
+      top: 161px;
+      animation-delay: $duration/-2;
+    }
+
+    &--3 {
+      @include spr(-10px, -228px, 148px, 130px);
+      right: 50%;
+      margin-right: -512px - 148px;
+      top: 104px;
+      animation-delay: $duration / -3 * 1.5;
+    }
+
+    &--4 {
+      @include spr(-10px, -378px, 99px, 83px);
+      right: 50%;
+      margin-right: -681px - 99px;
+      top: 247px;
+      animation-delay: ceil($duration/-3);
+    }
+  }
+
+  .hero-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: (1050px);
+    margin: 0 auto;
+    // .item {
+    //   flex: 1 1 25%;
+    //   max-width: (1050px/5);
+    // }
+    @for $i from 1 through 20 {
+      $row: ceil($i / 5);
+      $col: $i - (($row - 1) * 5);
+
+      #hero__#{$i} .img {
+        &:before,
+        &:after {
+          background-position: percentage(($col - 1) / 4) percentage(($row - 1) / 3);
+        }
+      }
+    }
+
+    .hero {
+      width: (1050px/5);
+      height: (1644px/4);
+      position: relative;
+      // transform: rotateY(180deg);
+      //
+      // 뒤집기 효과
+      .img {
+        transform: rotateY(0);
+        transition: 500ms transform ease-in-out;
+        transform-style: preserve-3d;
+        &:before,
+        &:after {
+          backface-visibility: hidden;
+        }
+        &:after {
+          transform: rotateY(180deg);
+          opacity: 1 !important;
+        }
+      }
+      &:hover,
+      &:focus-visible {
+        .img {
+          transform: rotateY(180deg);
+        }
+      }
+      //
+      .img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: relative;
+        &:before,
+        &:after {
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-repeat: no-repeat;
+          transition: 300ms opacity;
+        }
+        &:before {
+          background-image: url(../images/heroes/heroes_off.webp);
+          opacity: 1;
+        }
+        &:after {
+          background-image: url(../images/heroes/heroes_on.webp);
+          opacity: 0;
+        }
+      }
+      &:hover,
+      &:focus-visible {
+        .img {
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.popup__heroes {
+  display: flex !important;
+  opacity: 0;
+  z-index: -1;
+  // width: 100%;
+  // max-width: 100%;
+  // height: 100%;
+  // align-items: center;
+  // justify-content: center;
+  // text-align: center;
+  // background-color: transparent;
+
+  transition: 300ms opacity;
+  &.active {
+    z-index: 400;
+    opacity: 1;
+  }
+  // .popup__scroll:before {
+  //   content: '';
+  //   margin: 0 auto;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  //   max-width: 1700px;
+  //   width: 100%;
+  //   aspect-ratio: (1700/1025);
+  //   background: url(../images/job/pop-bg.webp) no-repeat 50% 0;
+  //   background-size: 100% auto;
+  // }
+  .swiper {
+    max-width: 902px;
+    // &,
+    // *,
+    // &-wrapper {
+    //   overflow: visible;
+    // }
+    &-slide {
+      padding: 50px 0;
+    }
+  }
+  .swiper-button {
+    z-index: initial;
+    margin-top: 55px;
+    $arr: -510px;
+    &--next {
+      right: 50%;
+      margin-right: $arr;
+    }
+    &--prev {
+      left: 50%;
+      margin-left: $arr;
+    }
+  }
+}

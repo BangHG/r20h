@@ -1,0 +1,118 @@
+﻿.section-market {
+  text-align: center;
+  // padding: 50px 0 0; //80px;
+  // .fp-bg {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   height: 100%;
+  //   width: 100%;
+  //   z-index: -1;
+  //   display: block;
+  background-repeat: no-repeat;
+  background-color: #1e0c38;
+  background-image: url(../images/market/bg.webp);
+  background-attachment: fixed;
+  // background-size: 100% auto;
+  background-size: cover;
+  background-position: 50% 0;
+  // }
+  .section-wrapper {
+    @include secWrapHeight(850px + 100px);
+    padding: 50px 0 50px;
+    // height: 850px + 50px;
+  }
+
+  .bg-ch {
+    z-index: 2;
+    width: 643px;
+    height: 1257px;
+    background: url(../images/market/ch.webp) no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 0;
+    right: 50%;
+    margin-right: -951px;
+    @media all and (min-width: 1880px) {
+      right: 0;
+      margin-right: 0;
+    }
+  }
+  .bg-cards {
+    position: absolute;
+    left: 50%;
+    margin-left: -956px - 140px;
+    top: -150px;
+    display: block;
+
+    @mixin marketCard($x, $y, $width, $height) {
+      background-position: $x $y;
+      width: $width;
+      height: $height;
+    }
+
+    .cell {
+      position: absolute;
+      .card {
+        background-image: url(../images/market/cards.webp);
+        background-repeat: no-repeat;
+        display: block;
+        position: absolute;
+        animation: swayLeaves 10000ms infinite linear;
+      }
+
+      &:nth-child(3) .card {
+        @include marketCard(-10px, -10px, 635px, 594px);
+        top: 0;
+        left: 0;
+        // z-index: 3;
+        animation-delay: -6600ms;
+      }
+
+      &:nth-child(2) .card {
+        @include marketCard(-665px, -10px, 269px, 327px);
+        top: 247px + 150px;
+        left: 237px;
+        // z-index: 2;
+        animation-delay: -3300ms;
+      }
+
+      &:nth-child(1) .card {
+        @include marketCard(-954px, -10px, 322px, 291px);
+        top: 483px + 150px;
+        left: 86px;
+        // z-index: 1;
+      }
+    }
+  }
+
+  .content {
+    z-index: 2;
+    margin: 0 auto;
+    position: relative;
+    width: 1000px;
+    background-size: 100%;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-image: url(../images/market/content_220923.webp);
+    height: 850px;
+    .market-link-area {
+      position: absolute;
+      width: 100%;
+      top: 653px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      .link {
+        display: block;
+        margin: 0 10px;
+        height: 66px;
+        width: 214px;
+        &:nth-child(1) {
+          width: 222px;
+        }
+      }
+    }
+  }
+}

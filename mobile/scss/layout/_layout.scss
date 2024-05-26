@@ -1,0 +1,52 @@
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  position: relative;
+  width: 100%;
+  // max-width: 1920px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+$body-transition: true;
+
+body {
+  overflow-x: hidden;
+  &:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+
+  @if $body-transition == true {
+    @at-root html {
+      background-color: #000;
+    }
+    transition: opacity 300ms !important;
+    opacity: 0;
+    &[data-loading='done'] {
+      opacity: 1;
+    }
+  }
+}
+
+//드래그 방지
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.container {
+  // width: 100%;
+  margin: 0 auto;
+  // max-width: 1280px;
+  // width: 1280px;
+  position: relative;
+  // overflow: hidden;
+}

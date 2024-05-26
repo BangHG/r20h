@@ -1,0 +1,218 @@
+﻿.section--reservation {
+  text-align: center;
+  background: #0f1231 url(../images/reservation/bg.webp) no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  .container {
+    position: relative;
+  }
+  .content {
+    position: relative;
+  }
+
+  .form-area {
+    // filter: invert(1);
+    // opacity: 0.5;
+    // background: #fff;
+    // border: 1px solid #fff;
+    //
+
+    top: 120px;
+    width: 100%;
+    text-align: center;
+    // width: 432px;
+    // height: 458px;
+    position: absolute;
+    display: block;
+    z-index: 5;
+    text-align: left;
+    font-size: 18px;
+    color: #bababa;
+    form {
+      max-width: 440px;
+      margin: 0 auto;
+    }
+    * {
+      font-weight: 500;
+      letter-spacing: -0.05em;
+    }
+    .input {
+      height: 70px;
+      padding: 0 1.2em;
+      // letter-spacing: -0.05em;
+      font-size: 20px;
+      width: 100%;
+      background-color: #fff;
+      border: 0;
+    }
+    hr {
+      margin: 30px auto;
+      border: 0;
+      // border-top: 3px dashed #696b7a;
+      display: block;
+      padding: 0;
+      display: none;
+    }
+    .chk-wrap {
+      margin-top: 25px;
+      padding: 0px 10px;
+      label {
+        cursor: pointer;
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+      }
+      input {
+        // padding: 4px;
+        margin-right: 8px;
+        width: 22px - 2px;
+        height: 22px - 2px;
+        box-shadow: 0 0 0 1px #a29d96;
+        margin-top: -1px;
+        accent-color: $color-1;
+        background-color: #fff;
+        &:checked {
+          background-color: $color-1;
+          box-shadow: 0 0 0 1px $color-1;
+        }
+      }
+      .chk-all {
+        font-size: 20px;
+      }
+      &__list {
+        padding-left: 18px;
+        li {
+          margin-top: 7px;
+        }
+      }
+    }
+    .clause-btn {
+      // width: 112px;
+      // height: 20px;
+      // background: url(../images/reservation/btn-clause.webp) no-repeat 0 0;
+      display: inline-block;
+      margin-left: 0.7em;
+      padding-left: 0.7em;
+      padding-right: 1.4em;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='8' fill='black'/%3E%3Cpath d='M6 12L10 8L6 4' stroke='%23FFF6E7' stroke-width='2'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: 100% 50%;
+      background-size: 1em;
+      // font-family: $font-family-sub;
+      color: #999;
+      font-weight: 600;
+      font-size: 16px;
+      position: relative;
+      &:hover {
+        color: lighten(#999, 5%);
+      }
+      &:before {
+        content: '';
+        width: 2px;
+        background-color: #545260;
+        height: 0.9em;
+        margin-top: -0.45em;
+        top: 50%;
+        left: 0;
+        display: block;
+        position: absolute;
+      }
+    }
+    .alert {
+      padding-left: 22px - 4px + 8px;
+      margin-top: 0.5em;
+      word-break: keep-all;
+      width: 100%;
+      font-size: 16px;
+      color: #d1af86;
+      font-weight: 300;
+      line-height: 1.2;
+    }
+    .btn-link {
+      //   @include btnImg(440px, 198px, '../images/reservation/btn-reservation.webp', 'relative');
+      margin-top: 45px;
+      background: url(../images/reservation/btn.webp) no-repeat;
+      width: 440px;
+      height: 99px;
+      display: block;
+    }
+  }
+
+  .app-download {
+    top: 321px;
+  }
+
+  .snack {
+    @keyframes snackSway {
+      0% {
+        transform: rotate(0);
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(-5deg) translate(5%, 5%);
+        opacity: 1;
+      }
+    }
+    @keyframes snackSway2 {
+      0% {
+        transform: rotate(0);
+        opacity: 1;
+      }
+      100% {
+        transform: rotate(5deg) translate(5%, 5%);
+        opacity: 1;
+      }
+    }
+    background-image: url(../images/reservation/snack.webp);
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    $duration: 5000ms;
+    animation: snackSway $duration infinite both alternate;
+    &--1 {
+      //card
+      @include spr(-10px, -10px, 220px, 148px);
+      top: 343px;
+      right: 50%;
+      margin-right: -291px - 220px;
+    }
+
+    &--2 {
+      //candy
+      @include spr(-10px, -178px, 64px, 107px);
+      top: 203px;
+      right: 50%;
+      animation-name: snackSway2;
+      margin-right: -383px - 64px;
+      animation-delay: (-$duration * 0.5);
+    }
+
+    &--3 {
+      //chew
+      @include spr(-10px, -305px, 107px, 90px);
+      top: 102px;
+      right: 50%;
+      margin-right: -730px - 107px;
+      animation-delay: (-$duration * 0.2);
+    }
+
+    &--4 {
+      //bar
+      @include spr(-10px, -415px, 162px, 96px);
+      top: 547px;
+      left: 50%;
+      margin-left: -440px - 162px;
+      animation-name: snackSway2;
+    }
+
+    &--5 {
+      //cup
+      @include spr(-10px, -531px, 153px, 129px);
+      top: 662px;
+      left: 50%;
+      margin-left: -542px - 153px;
+      animation-delay: (-$duration * 0.3);
+    }
+  }
+}
